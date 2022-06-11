@@ -29,5 +29,10 @@ def send_message_tg(message):
 
 
 while True:
-    parse_active_orders()
-    time.sleep(60)
+    try:
+        parse_active_orders()
+        time.sleep(60)
+    except RuntimeError:
+        pass
+
+    # Documentation to autostart script on MacOS: https://www.heyvaldemar.net/avtozapusk-skriptov-pri-zagruzke-macos/
